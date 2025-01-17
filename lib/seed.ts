@@ -16,16 +16,25 @@ const COLLECTIONS = {
 
 const propertyTypes = [
   "House",
-  "Townhome",
-  "Condo",
-  "Duplex",
-  "Studio",
+  "Townhomes",
+  "Condos",
+  "Duplexes",
+  "Studios",
   "Villa",
-  "Apartment",
-  "Other",
+  "Apartments",
+  "Others",
 ];
 
-const facilities = ["Laundry", "Parking", "Gym", "Wifi", "Pet-friendly"];
+const facilities = [
+  "Laundry",
+  "Car Parking",
+  "Sports Center",
+  "Cutlery",
+  "Gym",
+  "Swimming pool",
+  "Wifi",
+  "Pet Center",
+];
 
 function getRandomSubset<T>(
   array: T[],
@@ -109,7 +118,8 @@ async function seed() {
           name: `Reviewer ${i}`,
           avatar: reviewImages[Math.floor(Math.random() * reviewImages.length)],
           review: `This is a review by Reviewer ${i}.`,
-          rating: Math.floor(Math.random() * 5) + 1, // Rating between 1 and 5
+          rating: Math.floor(Math.random() * 5) + 1,
+          property: null,
         }
       );
       reviews.push(review);
